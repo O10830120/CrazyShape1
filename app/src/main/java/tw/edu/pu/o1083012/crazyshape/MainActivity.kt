@@ -41,8 +41,25 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(baseContext, "作者：韓婉晶", Toast.LENGTH_LONG).show()
                 imgNext.setOnLongClickListener(object : View.OnLongClickListener {
                     override fun onLongClick(p0: View): Boolean {
-                        intent = Intent(this@MainActivity, GameActivity::class.java)
+                        intent = Intent(this@MainActivity,GameActivity::class.java).apply{
+                            if (shape[i]==0){
+                                putExtra("shapenumber",0)
+                            }
+
+                            else if (shape[i]==1){
+                                putExtra("shapenumber",1)
+                            }
+
+                            else if (shape[i]==2){
+                                putExtra("shapenumber",2)
+                            }
+
+                            else if (shape[i]==3){
+                                putExtra("shapenumber",3)
+                            }
+                        }
                         startActivity(intent)
+                        recreate()
 
                         return true
                     }
