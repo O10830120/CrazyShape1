@@ -15,8 +15,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61"
-        app:srcCompat="@drawable/square"/>
+        app:layout_constraintVertical_bias="0.706"
+        app:srcCompat="@drawable/square" />
 
     <ImageView
         android:id="@+id/imgTitle"
@@ -25,10 +25,10 @@
         android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toTopOf="@+id/imgNext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818"
-        app:srcCompat="@drawable/cover"/>
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/cover" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.disklrucache.DiskLruCache
 import com.bumptech.glide.module.AppGlideModule
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,19 +30,24 @@ class MainActivity : AppCompatActivity() {
             .into(img)
 
 
-        Toast.makeText(baseContext, "作者：韓婉晶", Toast.LENGTH_LONG).show()
-        imgNext.setOnLongClickListener(object: View.OnLongClickListener{
+        imgNext.setOnLongClickListener(object: View.OnLongClickListener {
             override fun onLongClick(p0: View): Boolean {
-                intent = Intent(this@MainActivity, GameActivity::class.java)
-                startActivity(intent)
+                intent = Intent(this@MainActivity, GameActivity::class.java).apply {
+                    if (shape[i] == 0) {
+                        putExtra("circle", "Please draw a circle,star,triangle")
+                    }
+                }
 
+                Toast.makeText(baseContext, "作者：韓婉晶", Toast.LENGTH_LONG).show()
+                imgNext.setOnLongClickListener(object : View.OnLongClickListener {
+                    override fun onLongClick(p0: View): Boolean {
+                        intent = Intent(this@MainActivity, GameActivity::class.java)
+                        startActivity(intent)
 
-
-                return true
+                        return true
+                    }
+                })
             }
-
-        })
+        }
     }
 }
-
-
